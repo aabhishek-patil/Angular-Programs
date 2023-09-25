@@ -1,0 +1,41 @@
+<div>
+    <form>
+        Username: <input type="text" name = "uname" [(ngModel)]="uname" >{{this.uname}}<br>
+        Password: <input type="text" name="pass" [(ngModel)]="pass" ><br>
+        <!-- My name is {{biodata.name | uppercase}} -->
+        <button type="button" (click)="getdata()" value="submit">Submit</button>
+    </form>
+    <div *ngIf="this.check==true ; else E">{{uname | uppercase }} : {{pass |uppercase}} </div>
+    <ng-template #E> NO record submited yet ... </ng-template>
+</div>
+
+<div *ngFor="let i of names">
+        {{i}}
+        <br>
+
+</div><br>
+<div [ngSwitch]="uname">
+    <div *ngSwitchCase="'dogs'"> {{uname}} </div>
+    <div *ngSwitchDefault>
+        <h1>Switch</h1>
+        <p>Select topic from the dropdown, to switch the content of this DIV.</p>
+      </div>
+</div>
+
+<router-outlet>
+<button routerLink="/chandra"> click to go moon</button>
+</router-outlet>
+//uppercase and lowercase//
+<p>
+My name is {{biodata.name | uppercase}} and my age is {{biodata.age}} {{biodata.chappa | lowercase}} {{biodata.appa | uppercase}}
+</p>
+<br>
+<br>
+
+<div [ngStyle]="inline">
+    I LLLLLLLL UUUUUUUUUU
+</div>
+
+<div [ngClass]="multicss">
+    I LLLLLLLL UUUUUUUUUU
+</div>
